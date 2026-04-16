@@ -17,8 +17,10 @@ const Config = {
     return process.env.NEXT_PUBLIC_BACKEND_ORIGIN || '/api';
   },
 
-  // set 'NEXT_PUBLIC_IS_DEMO=true' in frontend/.env
+  // set 'NEXT_PUBLIC_IS_DEMO=true' and 'NEXT_PUBLIC_SIGNUP_ENABLED=true' in frontend/.env
   isDemoSite: process.env.NEXT_PUBLIC_IS_DEMO === 'true' || false,
+  // prefer NEXT_PUBLIC_SIGNUP_ENABLED for client availability; fall back to SIGNUP_ENABLED on server
+  signupEnabled: process.env.SIGNUP_ENABLED || 'fasle',
 };
 
 export default Config;

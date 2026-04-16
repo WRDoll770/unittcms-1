@@ -53,6 +53,7 @@ RUN npm run build
 FROM base AS runner
 WORKDIR /app
 
+ENV SIGNUP_ENABLED=false
 ENV NODE_ENV=production
 ENV PORT=8000
 ENV FRONTEND_ORIGIN=http://localhost:8000

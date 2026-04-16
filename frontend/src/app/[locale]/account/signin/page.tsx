@@ -36,9 +36,10 @@ export default async function Page({ params }: PageType) {
     signinError: t('signin_error'),
     demoPageWarning: t('demo_page_warning'),
   };
+  const signupEnabled = process.env.SIGNUP_ENABLED !== 'false';
   return (
     <>
-      <AuthPage isSignup={false} messages={messages} locale={params.locale as LocaleCodeType} ssoEnabled={ssoEnabled} />
+      <AuthPage isSignup={false} messages={messages} locale={params.locale as LocaleCodeType} ssoEnabled={ssoEnabled} signupEnabled={signupEnabled} />
     </>
   );
 }
